@@ -24,8 +24,12 @@
   <link rel="shortcut icon" href="favicon.ico" />
 
   <!--font-awesome link for icons-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" media="screen" href="assets/vendor/font-awesome/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Default style-sheet is for 'media' type screen (color computer display).  -->
   <link rel="stylesheet" media="screen" href="assets/css/style.css">
@@ -36,12 +40,13 @@
   <!--container start-->
   <div class="container">
     <!--header section start-->
-    <header>
-      <div class="header-top">
+    <header class="">
+      <div class="header-top wrapper">
         <h1><a href="#FIXME" title="Home">EuroFinance</a></h1>
-        <form action=""><input type="text"><label for="">Go</label></form>
+        <form action="" class="header-form"><input type="text" placeholder="Search"><button for="">Go</button>
+        </form>
       </div>
-      <nav>
+      <nav class="wrapper">
         <ul>
           <li>Home</li>
           <li>News</li>
@@ -53,7 +58,7 @@
           <li>Contact us</li>
         </ul>
       </nav>
-      <div class="header-bottom">
+      <div class="header-bottom wrapper">
         <h2>Sign up</h2>
         <p>Get the latest news on our events, exclusive offers and content.</p>
       </div>
