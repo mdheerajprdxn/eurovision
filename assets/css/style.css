@@ -101,7 +101,7 @@ li {
 
 /*for wrapper*/
 .wrapper {
-  max-width: 1360px;
+  max-width: 1100px;
   width: 86%; 
   margin: 0 auto;
 }
@@ -120,7 +120,7 @@ background-repeat: no-repeat;
 
 .header-top h1 a{
   color: white;
-  font-size: 3rem;
+  font-size: 3.1rem;
   font-weight: 400;
 }
 
@@ -136,8 +136,14 @@ background-repeat: no-repeat;
   
 }
 .header-form input {
-  padding: 10px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: 1px solid #369fe3;
+}
 
+.header-form input:focus {
+  box-shadow:inset 0px 0px 2px 2px #369fe3;
+  outline: none;
 }
 .header-form button {
   padding: 10px;
@@ -165,7 +171,11 @@ nav ul li {
 
 nav ul li a{ 
 color: inherit;
+font-weight: 400;
 text-decoration: none;
+}
+nav ul li a:hover {
+  color: #eee;
 }
 .header-bottom {
   padding: 100px 0;
@@ -252,7 +262,16 @@ text-decoration: none;
   background-color: #369fe3;
   color: white;
   font-size: 1rem;
+  border: 1px solid transparent;
+  transition: all .3s ease-in-out;
 }
+
+.submit:hover {
+  background-color: white;
+  color: #369fe3;
+  border: 1px solid #369fe3;
+}
+
 /* Newsletter end */
 
 
@@ -271,7 +290,8 @@ footer {
   margin-top: 50px;
   padding-top: 50px;
   background: rgb(33,94,168);
-  background: linear-gradient(90deg, rgba(33,94,168,1) 20%, rgba(26,52,102,1) 80%);
+  /* background: linear-gradient(90deg, rgba(33,94,168,1) 20%, rgba(26,52,102,1) 80%); */
+  background: linear-gradient(90deg, rgb(33, 94, 166) 10%, rgba(26,52,102,1) 80%);
   color: #ddd;
   font-weight: 400;
 }
@@ -308,6 +328,7 @@ footer {
 }
 
 .footer-main ul li a {
+  margin: 2px 0;
   color: inherit;
 }
 
@@ -319,13 +340,71 @@ footer {
 }
 
 .copyright .wrapper {
-  padding: 10px 0;
+  padding: 15px 0;
   display: flex;
   justify-content: space-between;
   font-size: .9rem;
 }
+.copyright .wrapper li a {
+  padding-right: 5px;
+  color: inherit;
+  font-weight: 400;
+  border-right: 1px solid #ccc;
+}
 
+.copyright .wrapper li:last-child a {
+  border: none;
+}
+.copyright .wrapper li a:hover {
+  color: #369fe3;
+}
 
+.footer-main .icons {
+  display: flex;
+  flex-flow: row;
+}
+
+.icons .icon {
+  background-color: white;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.icons .icon:hover {
+  box-shadow: 0px 0px 2px 2px #ccc;
+}
+/* Icons */
+.icons .icon {
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 1.5rem;
+}
+.linkedin:before {
+ content: "\f0e1";
+ color: #3568b6;
+}
+.twitter:before{
+  content: "\f099";
+  color: rgb(101, 202, 202);
+}
+.youtube::before{
+  content: "\f04b";
+  color: red;
+}
+
+.facebook::before{
+  content: "\f09a";
+  color: #1e58af;
+} 
+.down {
+  content: "\f0dd"
+}
 
  /*=================================
   footer styling ends here
