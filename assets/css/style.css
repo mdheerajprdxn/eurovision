@@ -184,13 +184,25 @@ nav ul li {
 
 
 /* Newsletter start */
+.newsletter {
+  padding: 50px 0;
+  color: #555;
+}
+.breadcrumb {
+  margin-bottom: 30px;
+  display: block;
+}
+
+.breadcrumb a {
+  color: #555;
+}
 .newsletter h2 {
   font-size: 2rem;
   color: #2463AC;
 }
 
 .form-element {
-  margin: 10px 0;
+  margin: 20px 0;
 }
 .form-element >*{
   margin: 5px 0;
@@ -199,23 +211,29 @@ nav ul li {
 
 .form-element input[type="text"],
 .form-element input[type="email"] {
-  padding: 5px 10px;
+  padding: 10px 15px;
+  box-shadow:inset 0px 0px 2px 2px #ccc;
+  background: #fff;
+  border: none;
 }
 
 .form-element select {
   padding: 5px 10px;
 
 }
-
+.read-more a{
+  color: #369fe3;
+}
 .submit {
-  padding: 10px 40px;
+  border: none;
+  border-radius: 3px;
+  padding: 12px 60px;
+  margin: 20px 0;
   display: block;
   background-color: #369fe3;
   color: white;
-  border: none;
-  
+  font-size: 1rem;
 }
-
 /* Newsletter end */
 
 
