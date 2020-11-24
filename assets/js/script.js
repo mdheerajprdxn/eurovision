@@ -27,3 +27,22 @@ function validator(e) {
     location.reload();
   }
 }
+
+// Nav bar
+let navButton = document.querySelector("#showNav");
+let backdrop = document.querySelector(".backdrop");
+let nav = document.querySelector("nav ul");
+navButton.addEventListener("click", showNav);
+backdrop.addEventListener("click", hideNav);
+
+function showNav() {
+  nav.style.display = "block";
+  nav.style.transform = "translateX(0px)";
+  backdrop.style.display = "block";
+}
+
+function hideNav() {
+  nav.style.display = "none";
+  nav.style.transform = "translateX(-100px)";
+  backdrop.style.display = "none";
+}
