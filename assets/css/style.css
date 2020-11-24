@@ -112,7 +112,6 @@ li {
 header{
   background: rgb(34,95,171);
 background: linear-gradient(90deg, rgba(34,95,171,1) 39%, rgba(253,29,29,0) 70%, rgba(34,97,172,0.8) 93%), url('../img/plane.jpg');
-/* padding: 100px 0; */
 background-size: cover;
 background-position: bottom;
 background-repeat: no-repeat;
@@ -137,8 +136,8 @@ background-repeat: no-repeat;
 }
 .header-form input {
   padding: 10px 20px;
-  font-size: 1.1rem;
   border: 1px solid #369fe3;
+  font-size: 1.1rem;
 }
 
 .header-form input:focus {
@@ -148,18 +147,19 @@ background-repeat: no-repeat;
 .header-form button {
   padding: 10px;
   border: none;
-  color: white;
   background-color: #369fe3;
-
+  color: white;
 }
 
 nav {
+  padding: 10px;
   background: rgb(44,127,199);
-background: linear-gradient(90deg, rgba(44,127,199,0.7) 62%, rgba(34,97,172,0.7) 83%);
-padding: 10px;
+  background: linear-gradient(90deg, rgba(44,127,199,0.7) 62%, rgba(34,97,172,0.7) 83%);
+}
+nav * {
+  transition: all 1.3s ease-in-out;
 }
 nav ul {
-  /* background-color: rgba( 120, 213, 242,0.4); */
   color: white;
 }
 
@@ -181,9 +181,9 @@ nav ul li a:hover {
   padding: 100px 0;
 }
 .header-bottom h2 {
+  margin: 20px 0;
   color: white;
   font-size: 2.5rem;
-  margin: 20px 0;
 }
 .header-bottom p {
   width: 50%;
@@ -232,9 +232,9 @@ nav ul li a:hover {
 .form-element input[type="text"],
 .form-element input[type="email"] {
   padding: 10px 15px;
+  border: none;
   box-shadow:inset 0px 0px 2px 2px #ccc;
   background: #fff;
-  border: none;
 }
 
 .form-element input[type="text"]:focus ,
@@ -254,7 +254,7 @@ nav ul li a:hover {
   color: #369fe3;
 }
 .submit {
-  border: none;
+  border: 1px solid transparent;
   border-radius: 3px;
   padding: 12px 60px;
   margin: 20px 0;
@@ -262,21 +262,16 @@ nav ul li a:hover {
   background-color: #369fe3;
   color: white;
   font-size: 1rem;
-  border: 1px solid transparent;
   transition: all .3s ease-in-out;
 }
 
 .submit:hover {
+  border: 1px solid #369fe3;
   background-color: white;
   color: #369fe3;
-  border: 1px solid #369fe3;
 }
 
 /* Newsletter end */
-
-
-
-
 
 /*=================================
   main styling ends here
@@ -287,10 +282,9 @@ nav ul li a:hover {
 =================================*/ 
 
 footer {
-  margin-top: 50px;
   padding-top: 50px;
+  margin-top: 50px;
   background: rgb(33,94,168);
-  /* background: linear-gradient(90deg, rgba(33,94,168,1) 20%, rgba(26,52,102,1) 80%); */
   background: linear-gradient(90deg, rgb(33, 94, 166) 10%, rgba(26,52,102,1) 80%);
   color: #ddd;
   font-weight: 400;
@@ -307,10 +301,10 @@ footer {
 .footer-main h2 {
   padding-right: 30px;
   padding-bottom: 10px;
+  border-bottom: 1px solid #4086b4;
   margin-bottom: 20px;
   font-size: 2.5rem;
   color: white;
-  border-bottom: 1px solid #4086b4;
 }
 .footer-main h3 {
   font-size: 1.5rem;
@@ -346,10 +340,10 @@ footer {
   font-size: .9rem;
 }
 .copyright .wrapper li a {
+  border-right: 1px solid #ccc;
   padding-right: 5px;
   color: inherit;
   font-weight: 400;
-  border-right: 1px solid #ccc;
 }
 
 .copyright .wrapper li:last-child a {
@@ -365,14 +359,14 @@ footer {
 }
 
 .icons .icon {
-  background-color: white;
+  border-radius: 50%;
   height: 45px;
   width: 45px;
-  border-radius: 50%;
   margin: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: white;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -428,24 +422,69 @@ nav #showNav:before{
 @media only screen and (max-width: 995px) {
 
     .backdrop {
-      position: fixed;
-      height: 100vh;
+      height: 100%;
       width: 100vw;
+      display: none;
+      position: fixed;
       background-color: rgba(0,0,0,0.5);
-      display: none;
     }
-    
-    nav ul {
+  
+    nav ul.wrapper {
+      height: 100%;
+      width: auto;
+      max-width: 50vw;
+      padding: 20px;
       display: none;
-      transform: translateX(-1000px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      background-color: #1e58af;
+      transition: all 1.3s ease-in-out;
+      transform: translateX(-100px);
     }
     
     nav ul li {
       display: block;
+      margin: 5px 0;
+      border: none;
     }
 
     nav #showNav{
       display: block;
     }
 
+    .footer-main{
+      flex-wrap:wrap;
+      }
+  .footer-main >* {
+    flex-basis: 49%;
+}
+
 }  
+
+
+
+@media only screen and (max-width: 767px) {
+  .header-top {
+    flex-wrap: wrap;
+  }
+  .header-top >* {
+    margin: 5px;
+    flex-basis: 60%;
+  }
+  .footer-main >* {
+    margin: 20px 0;
+    flex-basis: 80%;
+  }
+  
+  .copyright .wrapper {
+    flex-wrap: wrap;
+  }
+  
+  
+  .copyright .wrapper * {
+    margin: 5px 0;
+    flex-basis: 100%;
+  }
+}
