@@ -15,20 +15,18 @@
   <!-- Keywords to help with SEO go here. Note: Usage of lang tag.  -->
   <meta name="keywords" lang="en" content="">
 
-  <!-- This meta tag is used for mobile device to display the page without any zooming,
-       so how much the device is able to fit on the screen is what's shown initially. 
-       Remove comments from this tag, when you want to apply media queries to the website. -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <!-- Place favicon.ico in the root directory: mathiasbynens.be/notes/touch-icons -->
   <link rel="shortcut icon" href="favicon.ico" />
 
   <!--font-awesome link for icons-->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" media="screen" href="assets/vendor/font-awesome/css/all.min.css">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Default style-sheet is for 'media' type screen (color computer display).  -->
@@ -46,16 +44,16 @@
         <form action="" class="header-form"><input type="text" placeholder="Search"><button for="">Go</button>
         </form>
       </div>
-      <nav class="wrapper">
-        <ul>
-          <li>Home</li>
-          <li>News</li>
-          <li>Conferences</li>
-          <li>Training</li>
-          <li>Awards</li>
-          <li>About us</li>
-          <li>Treasury Network</li>
-          <li>Contact us</li>
+      <nav>
+        <ul class="wrapper">
+          <li> <a href="#FIXME" title="Home"> Home</a></li>
+          <li><a href="#FIXME" title="News"> News</a></li>
+          <li><a href="#FIXME" title="Conferences"> Conferences</a></li>
+          <li><a href="#FIXME" title="Training"> Training</a></li>
+          <li><a href="#FIXME" title="Awards"> Awards</a></li>
+          <li><a href="#FIXME" title=" About us"> About us</a></li>
+          <li><a href="#FIXME" title="Treasury Network"> Treasury Network</a></li>
+          <li><a href="#FIXME" title="Contact us"> Contact us</a></li>
         </ul>
       </nav>
       <div class="header-bottom wrapper">
@@ -95,13 +93,16 @@
             <div class="form-element">
               <label for="company-type">Company Type</label>
               <select name="companyType" id="company-type">
-                <option value="">-select-</option>
+                <option value="select">-select-</option>
+                <option value="big">Big</option>
+                <option value="small">Small</option>
               </select>
             </div>
             <div class="form-element">
               <label for="country">Country</label>
               <select name="country" id="country">
-                <option value="">-Choose-</option>
+                <option value="choose">-Choose-</option>
+                <option value="India">India</option>
               </select>
             </div>
             <div class="form-element">
@@ -113,12 +114,12 @@
               offers, Economist events and other products via email?</span>
             <div class="form-element">
               <span>
-                <input type="checkbox" name="" id="">
-                <label for="">Yes</label>
+                <input type="checkbox" name="yes" id="yes">
+                <label for="yes">Yes</label>
               </span>
               <span>
-                <input type="checkbox" name="" id="">
-                <label for="">No</label>
+                <input type="checkbox" name="no" id="no">
+                <label for="no">No</label>
               </span>
             </div>
             <span class="read-more">The Economist Group is a global organisation and operates a strict privacy policy
@@ -139,41 +140,40 @@
       <div class="">
 
         <div class="footer-main wrapper">
-          <div>
+          <div class="footer-title">
             <h2>Eurofinance</h2>
-            <span>Part of The Economist Group</span>
+            <span> Part of <strong> The Economist Group</strong></span>
           </div>
           <div>
-            <h3><a href="">Our EuroFinance.com</a></h3>
+            <h3>Our <a href=""> EuroFinance.com</a></h3>
             <ul>
-              <li>Home</li>
-              <li>News</li>
-              <li>Conferences</li>
-              <li>Training</li>
-              <li>Awards</li>
-              <li>About us</li>
-              <li>Treasury Network</li>
-              <li>Contact us</li>
+              <li> <a href="#FIXME" title="Home"> Home</a></li>
+              <li><a href="#FIXME" title="News"> News</a></li>
+              <li><a href="#FIXME" title="Conferences"> Conferences</a></li>
+              <li><a href="#FIXME" title="Training"> Training</a></li>
+              <li><a href="#FIXME" title="Awards"> Awards</a></li>
+              <li><a href="#FIXME" title=" About us"> About us</a></li>
+              <li><a href="#FIXME" title="Treasury Network"> Treasury Network</a></li>
+              <li><a href="#FIXME" title="Contact us"> Contact us</a></li>
             </ul>
-            <div>
-              <h3>Keep updated</h3>
-              <ul>
-                <li class="icon linkedin"></li>
-                <li class="icon twitter"></li>
-                <li class="icon youtube"></li>
-                <li class="icon facebook"></li>
-              </ul>
-            </div>
+          </div>
+          <div>
+            <h3>Keep updated</h3>
+            <ul class="icons">
+              <li class="icon linkedin"></li>
+              <li class="icon twitter"></li>
+              <li class="icon youtube"></li>
+              <li class="icon facebook"></li>
+            </ul>
           </div>
         </div>
         <div class="copyright">
           <div class='wrapper'>
-
             <ul class="">
-              <li>Terms of use</li>
-              <li>Privacy and cookies</li>
-              <li>Accessibility</li>
-              <li>Manage cookie preferences</li>
+              <li> <a href="#FIXME" title="Terms Of use"> Terms of use</a></li>
+              <li> <a href="#FIXME" title="Privacy And Cookies">Privacy and cookies</a> </li>
+              <li> <a href="#FIXME" title="Accessibility"> Accessibility</a></li>
+              <li> <a href="#FIXME" title="Manage Cookie Preferences">Manage cookie preferences</a> </li>
             </ul>
             <span>
               Copyright &copy; 2019 EuroFinance
