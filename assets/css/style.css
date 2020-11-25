@@ -219,16 +219,19 @@ nav ul li a:hover {
   font-size: 2rem;
   color: #2463AC;
 }
-
 .form-element {
   margin: 20px 0;
- 
 }
 .form-element >*{
   margin: 5px 0;
   display: block;
 }
 
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  display: none;
+}
 .form-element input[type="text"],
 .form-element input[type="email"] {
   padding: 10px 15px;
