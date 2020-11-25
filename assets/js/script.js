@@ -11,16 +11,45 @@ function validator(e) {
   } else if (e.target.no.checked) {
     newsLetter = false;
   }
-  if (
-    e.target.firstName.value == "" ||
-    e.target.lastName.value == "" ||
-    e.target.position.value == "" ||
-    e.target.company.value == "" ||
-    e.target.companyType.value == "select" ||
-    e.target.country.value == "choose" ||
-    e.target.email.value == "" ||
-    newsLetter == null
-  ) {
+  let errors = 0;
+  var inputs = e.target.childNodes;
+  for (input of inputs) {
+    if (input.classList) {
+      if (input.classList[0] == "form-element") {
+        let inputChildren = input.childNodes;
+        for (inputChild of inputChildren) {
+          if (inputChild.nodeName.toLowerCase() == "input") {
+            let errorMsg = inputChild.nextElementSibling;
+            if (inputChild.value == "") {
+              errorMsg.style.display = "block";
+              inputChild.classList.add("error-field");
+              errors++;
+            } else {
+              inputChild.classList.remove("error-field");
+              errorMsg.style.display = "none";
+            }
+          } else if (inputChild.nodeName.toLowerCase() == "select") {
+            let errorMsg = inputChild.nextElementSibling;
+            if (inputChild.value == "select" || inputChild.value == "choose") {
+              errorMsg.style.display = "block";
+              errors++;
+            } else {
+              errorMsg.style.display = "none";
+            }
+          } else {
+            let errorMsg = document.querySelector("#checkbox-error");
+            if (newsLetter == null) {
+              errorMsg.style.display = "block";
+              errors++;
+            } else {
+              errorMsg.style.display = "none";
+            }
+          }
+        }
+      }
+    }
+  }
+  if (errors > 0) {
     alert("Please fill all values");
   } else {
     alert("Thank you for your response");
