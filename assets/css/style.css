@@ -232,6 +232,8 @@ nav ul li a:hover {
   font-size: 0.9rem;
   display: none;
 }
+
+
 .form-element input[type="text"],
 .form-element input[type="email"] {
   padding: 10px 15px;
@@ -253,6 +255,13 @@ nav ul li a:hover {
   color: white;
   outline: none;
 }
+
+
+.error-field {
+  border: 1px solid red !important;
+  box-shadow:inset 0px 0px 2px 2px red;
+}
+
 .read-more a{
   color: #369fe3;
 }
