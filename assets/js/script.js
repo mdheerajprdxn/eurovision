@@ -1,58 +1,83 @@
 let myForm = document.querySelector("#form");
 myForm.addEventListener("submit", validator);
 
-let firstName = document.querySelector("#first-name");
+let errors = 0;
 
-function validator(e) {
-  e.preventDefault();
-  let newsLetter = null;
-  if (e.target.yes.checked) {
-    newsLetter = true;
-  } else if (e.target.no.checked) {
-    newsLetter = false;
-  }
-  let errors = 0;
-  var inputs = e.target.childNodes;
-  for (input of inputs) {
-    if (input.classList) {
-      if (input.classList[0] == "form-element") {
-        let inputChildren = input.childNodes;
-        for (inputChild of inputChildren) {
-          if (inputChild.nodeName.toLowerCase() == "input") {
-            let errorMsg = inputChild.nextElementSibling;
-            if (inputChild.value == "") {
-              errorMsg.style.display = "block";
-              inputChild.classList.add("error-field");
-              errors++;
-            } else {
-              inputChild.classList.remove("error-field");
-              errorMsg.style.display = "none";
-            }
-          } else if (inputChild.nodeName.toLowerCase() == "select") {
-            let errorMsg = inputChild.nextElementSibling;
-            if (inputChild.value == "select" || inputChild.value == "choose") {
-              errorMsg.style.display = "block";
-              errors++;
-            } else {
-              errorMsg.style.display = "none";
-            }
-          } else {
-            let errorMsg = document.querySelector("#checkbox-error");
-            if (newsLetter == null) {
-              errorMsg.style.display = "block";
-              errors++;
-            } else {
-              errorMsg.style.display = "none";
-            }
-          }
-        }
+function getInputField(element) {
+  var node = null;
+  for (field of element.childNodes) {
+    if (field.querySelector) {
+      if (field.nodeName == "INPUT" || field.nodeName == "SELECT") {
+        node = field;
       }
     }
   }
-  if (errors > 0) {
-    alert("Please fill all values");
+  return node;
+}
+
+function checkEmpty(input) {
+  let err = input.nextElementSibling;
+  // Check if input is empty and put the error msg in DOM
+  if (input.value == "") {
+    // get error message specific to each label
+    let errMsg = getErrorMessage(input);
+    err.innerHTML = errMsg;
+    errors++;
   } else {
-    alert("Thank you for your response");
+    err.innerHTML = "";
+  }
+}
+
+function getErrorMessage(input) {
+  let label = input.previousElementSibling.innerHTML;
+  let errMsg = "Field cannot be empty";
+  if (input.nodeName == "INPUT") {
+    errMsg = label + " cannot be empty";
+  } else if (input.nodeName == "SELECT") {
+    errMsg = "Please select an option";
+  }
+  return errMsg;
+}
+
+function validateCheckbox() {
+  let checkbox = null;
+  let yes = document.querySelector("#yes");
+  let no = document.querySelector("#no");
+  let err = document.querySelector("#checkbox-error");
+  if (yes.checked) {
+    console.log("yes");
+    checkbox = true;
+  } else if (no.checked) {
+    console.log("no");
+    checkbox = false;
+  }
+  if (checkbox == null) {
+    console.log("nul");
+    errMsg = " Select a checkbox";
+    err.innerHTML = errMsg;
+    errors++;
+  } else {
+    err.innerHTML = "";
+  }
+}
+
+function validator(e) {
+  e.preventDefault();
+  // reset errors to 0 at start of each validation
+  errors = 0;
+
+  var inputs = document.querySelectorAll("#form .form-element");
+  for (input of inputs) {
+    // get input field from each form-element div
+    let res = getInputField(input);
+    if (res) {
+      checkEmpty(res);
+    }
+  }
+  // Validate checkbox as a special case
+  validateCheckbox();
+
+  if (errors == 0) {
     location.reload();
   }
 }
